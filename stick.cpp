@@ -13,7 +13,7 @@ void Stick::update(){
     vec2 offset = diff * diffFactor * 0.5f;
 
     //Tear by distance
-    if(dist > 100) breakStick();
+    if(dist > 70) breakStick();
     
     p0.setPosition(p0Pos.x + offset.x, p0Pos.y + offset.y);
     p1.setPosition(p1Pos.x - offset.x, p1Pos.y - offset.y);

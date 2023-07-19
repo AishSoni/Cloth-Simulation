@@ -99,5 +99,5 @@ void application::destroy(){
 
 void application::reset(){
     delete cloth;
-    setup(1500, 360, 10);
+    setup(1800, 400, 15);
 }

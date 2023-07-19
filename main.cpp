@@ -5,7 +5,7 @@
 
 int main(int argc, char* args[]){
     application app;
-    app.setup(1500, 360, 10);
+    app.setup(1800, 400, 12);
 
     while(app.IsRunning()){
         app.input();
