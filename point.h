@@ -4,6 +4,8 @@
 #include "mouse.h"
 #include "stick.h"
 
+class Stick;
+
 class Point{
     Stick* sticks[2] = { nullptr };
 

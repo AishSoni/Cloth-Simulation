@@ -1,2 +1,52 @@
-all:
-	g++ -I src/include -L src/lib -o clothSim main.cpp -lmingw32 -lSDL2main -lSDL2
+CPPFLAGS = -I src/include -I src/include/SDL2 -I imgui -I imgui/backends
+LDFLAGS = -Lsrc/lib -lmingw32 -lSDL2main -lSDL2 -lopengl32
+
+all: clothSim
+
+clothSim: main.o application.o renderer.o cloth.o mouse.o point.o stick.o imgui_impl_sdl2.o imgui_impl_opengl3.o imgui.o imgui_demo.o imgui_draw.o imgui_tables.o imgui_widgets.o
+	g++  main.o application.o renderer.o cloth.o mouse.o point.o stick.o imgui_impl_sdl2.o imgui_impl_opengl3.o imgui.o imgui_demo.o imgui_draw.o imgui_tables.o imgui_widgets.o $(LDFLAGS) -o clothSim
+
+main.o: main.cpp
+	g++ $(CPPFLAGS) -c main.cpp -o main.o
+
+application.o: application.cpp application.h
+	g++ $(CPPFLAGS) -c application.cpp -o application.o
+
+renderer.o: renderer.cpp renderer.h
+	g++ $(CPPFLAGS) -c renderer.cpp -o renderer.o
+
+cloth.o: cloth.cpp cloth.h
+	g++ $(CPPFLAGS) -c cloth.cpp -o cloth.o
+
+mouse.o: mouse.cpp mouse.h
+	g++ $(CPPFLAGS) -c mouse.cpp -o mouse.o
+
+point.o: point.cpp point.h
+	g++ $(CPPFLAGS) -c point.cpp -o point.o
+
+stick.o: stick.cpp stick.h
+	g++ $(CPPFLAGS) -c stick.cpp -o stick.o
+
+imgui_impl_sdl2.o: imgui/backends/imgui_impl_sdl2.cpp
+	g++ $(CPPFLAGS) -c imgui/backends/imgui_impl_sdl2.cpp -o imgui_impl_sdl2.o
+
+imgui_impl_opengl3.o: imgui/backends/imgui_impl_opengl3.cpp
+	g++ $(CPPFLAGS) -c imgui/backends/imgui_impl_opengl3.cpp -o imgui_impl_opengl3.o
+
+imgui.o: imgui/imgui.cpp
+	g++ $(CPPFLAGS) -c imgui/imgui.cpp -o imgui.o
+
+imgui_demo.o: imgui/imgui_demo.cpp
+	g++ $(CPPFLAGS) -c imgui/imgui_demo.cpp -o imgui_demo.o
+
+imgui_draw.o: imgui/imgui_draw.cpp
+	g++ $(CPPFLAGS) -c imgui/imgui_draw.cpp -o imgui_draw.o
+
+imgui_tables.o: imgui/imgui_tables.cpp
+	g++ $(CPPFLAGS) -c imgui/imgui_tables.cpp -o imgui_tables.o
+
+imgui_widgets.o: imgui/imgui_widgets.cpp
+	g++ $(CPPFLAGS) -c imgui/imgui_widgets.cpp -o imgui_widgets.o
+
+clean:
+	del *.o clothSim

@@ -2,3 +2,5 @@
 \clothSim.exe
 \.vs
 \imgui
+*.o
+*.exe
