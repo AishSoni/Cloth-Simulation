@@ -12,12 +12,19 @@ class Stick{
     bool isActive = true;
     bool isSelected = false;
 
-    unsigned long color = 0xFF000000;
-    unsigned long colorWhenSelected = 0xFF39FF14;
+    ImVec4 color;
+    ImVec4 colorWhenSelected;
 
     public:
-    Stick(Point& p0, Point& p1, double length) : p0(p0), p1(p1), length(length) {}
+    
+    Stick(Point& p0, Point& p1, double length) :
+        p0(p0),
+        p1(p1),
+        length(length), 
+        color(ImVec4(1.0f, 1.0f, 1.0f, 1.0f)),
+        colorWhenSelected(ImVec4(1.0f, 0.5f, 0.5f, 1.0f)) {}
     ~Stick() = default;
+
     void setIsSelected(bool val) { isSelected = val; };
     const double getLength() const { return length; }
     void update();

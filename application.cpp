@@ -1,5 +1,9 @@
 #include <iostream>
 #include "application.h"
+#include "mouse.h"
+#include "point.h"
+#include "renderer.h"
+#include "cloth.h"
 
 void application::setup(int clothWidth, int clothHeight, int clothSpacing){
     renderer = new Renderer();
@@ -80,10 +84,35 @@ bool application::IsRunning() const{
   return isRunning;
 }
 
-void application::render() const {
-  renderer->clearScreen(0xFFFFFF);
+void application::render() {
+  // Start the Dear ImGui frame
+  //ImGui_ImplOpenGL3_NewFrame();
+  //ImGui_ImplSDL2_NewFrame();
+  //ImGui::NewFrame();
+
+  renderer->clearScreen();
   cloth->draw(renderer);
+  //guiSetup();
   renderer->render();
+}
+
+void application::guiSetup(){
+  // Edit a color stored as 4 floats
+  //float* my_color;
+  //ImGui::ColorEdit4("Color", my_color);
+
+  // Generate samples and plot them
+  float samples[100];
+  for (int n = 0; n < 100; n++)
+      samples[n] = sinf(n * 0.2f + 0 * 1.5f);
+  //ImGui::PlotLines("Samples", samples, 100);
+
+  // Display contents in a scrolling region
+  //ImGui::TextColored(ImVec4(1,1,0,1), "Important Stuff");
+  //ImGui::BeginChild("Scrolling");
+  //for (int n = 0; n < 50; n++)
+      //ImGui::Text("%04d: Some text", n);
+  //ImGui::EndChild();
 }
 
 void application::destroy(){
