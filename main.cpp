@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cmath>
 #include "application.h"
-#include "application.cpp"
 
 int main(int argc, char* args[]){
     application app;

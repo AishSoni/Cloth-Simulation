@@ -1,10 +1,5 @@
 #include <iostream>
 #include "application.h"
-#include "cloth.cpp"
-#include "mouse.cpp"
-#include "point.cpp"
-#include "renderer.cpp"
-#include "stick.cpp"
 
 void application::setup(int clothWidth, int clothHeight, int clothSpacing){
     renderer = new Renderer();
