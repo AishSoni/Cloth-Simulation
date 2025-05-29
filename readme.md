@@ -2,6 +2,8 @@
 
 A simple cloth simulation implemented in C++ using SDL2 and ImGui.
 
+![Alt Text](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHI4b25mYmN1enVvZGJxd2R4MXNnemhhZDFiMXczOHVtZnNxMTZuNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/V4s3SuRfcFM3OyPIb9/giphy.gif)
+
 ## Description
 
 This project implements a cloth simulation using Verlet integration and Jacobson's method for fast physics calculations. The simulation allows you to interact with the cloth using the mouse and visualize the simulation in real-time. The project demonstrates various C++, OOPs (Object-Oriented Programming), and rendering concepts.
