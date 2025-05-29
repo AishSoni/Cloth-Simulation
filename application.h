@@ -23,7 +23,8 @@ class application{
     void setup(int clothWidth, int clothHeight, int clothSpacing);
     void input();
     void update();
-    void render() const;
+    void render();
+    void guiSetup();
 
     void reset();
     void destroy();

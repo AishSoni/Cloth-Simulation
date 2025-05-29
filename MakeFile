@@ -1,5 +1,5 @@
 CPPFLAGS = -I src/include -I src/include/SDL2 -I imgui -I imgui/backends
-LDFLAGS = -Lsrc/lib -lmingw32 -lSDL2main -lSDL2 -lopengl32
+LDFLAGS = -Lsrc/lib src/lib/glew32.lib -lmingw32 -lSDL2main -lSDL2 -lopengl32
 
 all: clothSim
 
